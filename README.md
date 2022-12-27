@@ -1,20 +1,40 @@
 # desafioCriativo
-Se liga nas orientaÁıes:
+Se liga nas orienta√ß√µes:
 
 PARA BACKEND:
-1. O desafio È a criaÁ„o de um micro serviÁo com uma API para encurtar URLs que dever· seguir o padr„o REST.
+1. O desafio √© a cria√ß√£o de um micro servi√ßo com uma API para encurtar URLs que dever√° seguir o padr√£o REST.
 
  
 
-2. Ao cadastrar uma URL, È necess·rio retornar uma outra URL encurtada que, ao ser acessada, redireciona o usu·rio para a URL original.
+2. Ao cadastrar uma URL, √© necess√°rio retornar uma outra URL encurtada que, ao ser acessada, redireciona o usu√°rio para a URL original.
 
-3.AlÈm da API base, deve ser feita a criaÁ„o de um endpoint de estatÌsticas de acesso ‡s URLs geradas.
+3.Al√©m da API base, deve ser feita a cria√ß√£o de um endpoint de estat√≠sticas de acesso √†s URLs geradas.
 
-4. Os testes do cÛdigo tambÈm devem ser implementados.
+4. Os testes do c√≥digo tamb√©m devem ser implementados.
 
 
 O desafio deve ser feito utilizando Kotlin ou Java com framework Spring.
 
 
 
-O envio pode ser feito com um link de repositÛrio Git.
+O envio pode ser feito com um link de reposit√≥rio Git.
+
+
+#Usando o postman para ter acesso a API, 
+
+##Para cadastrar uma url:
+metodo: POST
+caminho: http://localhost:8080/url
+exemplo de json:
+{
+    "nome": "https://www.ufape.com/"
+}
+
+##Para acessar a Url
+metodo: GET
+caminho: http://localhost:8080/url/<codigo gerado pelo micro servi√ßo>
+
+
+##Para acessar as estatisticas
+metodo: GET
+caminho: http://localhost:8080/url/estatisticas
