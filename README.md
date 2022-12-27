@@ -20,21 +20,21 @@ O desafio deve ser feito utilizando Kotlin ou Java com framework Spring.
 O envio pode ser feito com um link de repositório Git.
 
 
-#Usando o postman para ter acesso a API, 
+# Usando o postman para ter acesso a API
 
-##Para cadastrar uma url:
-metodo: POST
-caminho: http://localhost:8080/url
-exemplo de json:
-{
-    "nome": "https://www.ufape.com/"
-}
+## Para cadastrar uma url
+método: POST <br/>
+caminho: http://localhost:8080/url <br/>
+exemplo de json: <br/>
+{ <br/>
+    "nome": "https://www.ufape.com/" <br/>
+} <br/>
 
-##Para acessar a Url
-metodo: GET
-caminho: http://localhost:8080/url/<codigo gerado pelo micro serviço>
+## Para acessar a Url
+método: GET <br/>
+caminho: http://localhost:8080/url/<codigo gerado pelo micro serviço> <br/>
 
 
-##Para acessar as estatisticas
-metodo: GET
-caminho: http://localhost:8080/url/estatisticas
+## Para acessar as estatisticas
+método: GET <br/>
+caminho: http://localhost:8080/url/estatisticas <br/>
