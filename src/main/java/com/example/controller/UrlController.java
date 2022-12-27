@@ -21,11 +21,6 @@ public class UrlController {
 	@Autowired
 	private UrlService urlService;
 	
-	@GetMapping("/listar")
-	public List<Url> listar() {
-		return urlService.obterUrls();
-	}
-	
 	@GetMapping("/estatisticas")
 	public List<String> estatisticas() {
 		List<String> estatisticaStrings = new ArrayList<>();
@@ -45,14 +40,6 @@ public class UrlController {
 	
 	@GetMapping("/{nomeCurto}")
 	public String acessar(@PathVariable String nomeCurto) {
-		List<Url> urls = this.urlService.findByNomeCurto(nomeCurto);
-		if(urls.size() == 0) {
-			return "Url não encontrada";
-		}else {
-			Url url = urls.get(0);
-			url.incrementarQuantidadeAcessos();
-			urlService.atualizar(url);
-			return url.getNome();
-		}
+		return this.urlService.acessar(nomeCurto);
 	}
 }

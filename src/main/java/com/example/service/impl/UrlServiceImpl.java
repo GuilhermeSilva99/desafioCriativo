@@ -51,13 +51,21 @@ public class UrlServiceImpl implements UrlService {
 	}
 
 	@Override
-	public Url atualizar(Url url) {
-		return this.urlRepository.save(url);
+	public List<Url> findByNome(String nome) {
+		return this.urlRepository.findByNome(nome);
 	}
 
 	@Override
-	public List<Url> findByNome(String nome) {
-		return this.urlRepository.findByNome(nome);
+	public String acessar(String nomeCurto) {
+		List<Url> urls = this.urlRepository.findByNomeCurto(nomeCurto);
+		if(urls.size() == 0) {
+			return "Url não encontrada";
+		}else {
+			Url url = urls.get(0);
+			url.incrementarQuantidadeAcessos();
+			this.urlRepository.save(url);
+			return url.getNome();
+		}
 	}
 	
 }

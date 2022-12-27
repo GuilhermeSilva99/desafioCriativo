@@ -8,7 +8,7 @@ public interface UrlService {
 	
 	public List<Url> obterUrls();
 	public String adicionar(Url url);
-	public Url atualizar(Url url);
+	public String acessar(String nomeCurto);
 	public List<Url> findByNome(String nome);
 	public List<Url> findByNomeCurto(String nomeCurto);
 }
